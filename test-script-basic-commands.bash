@@ -20,8 +20,6 @@ echo "Hello"
 
 mkdir test-dir
 
-# mkdir -p test-dir
-
 cd test-dir
 
 touch test-file.txt
@@ -45,9 +43,16 @@ pwd
 ls ../test-dir
 
 
+# using absolute path with ls
 
+cd ..
 
+ls /Users/christopher_distasio/AAA-Practice/bash-script-practice/test-dir-parent/child
 
+ls -a /Users/christopher_distasio/AAA-Practice/bash-script-practice
+
+ls -a -lh /Users/christopher_distasio/AAA-Practice/bash-script-practice
+# same as ls -a -l -h /Users/christopher_distasio/AAA-Practice/bash-script-practice
 
 # man ls 
 
