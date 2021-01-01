@@ -54,6 +54,26 @@ ls -a /Users/christopher_distasio/AAA-Practice/bash-script-practice
 ls -a -lh /Users/christopher_distasio/AAA-Practice/bash-script-practice
 # same as ls -a -l -h /Users/christopher_distasio/AAA-Practice/bash-script-practice
 
+cd ../..
+# how to go up more than one level
+
+pwd
+
+cd /Users/christopher_distasio/AAA-Practice/bash-script-practice/test-dir-parent/child/
+
+pwd
+
+cd .././../././
+# task: guess which directory you'll end up in
+
+# Answer: 
+
+pwd
+
+
+
+
+
 # man ls 
 
 #man shows info about any command following in a separate terminal space than any previous commands before it
