@@ -1,16 +1,38 @@
 #!/bin/bash
 
-# These files are copied from .bash files placed in the Mac directory (root) /usr/local/bin because files need to be located in this exact directory for them to be executable
+## general bash info
 
-# Bash files are made executable by using chmod +x ~/usr/local/bin/<file> with the tilde (~) representing the root directory (while at the root directory level in Terminal/other code editor)
+  # [] around a flag mean that it is optional
 
-# On a Mac, bash scripts go in root: /usr/local/bin
+  # ... after an option means that multiple are possible
+
+  # These files are copied from .bash files placed in the Mac directory (root) /usr/local/bin because files need to be located in this exact directory for them to be executable
+
+  # Bash files are made executable by using chmod +x ~/usr/local/bin/<file> with the tilde (~) representing the root directory (while at the root directory level in Terminal/other code editor)
+
+  # On a Mac, bash scripts go in root: /usr/local/bin
+
+  # . means current directory
+
+  ## .. means parent directory
+
+
+## flags
+##  -i makes it interactive ... checking if really want to does
+##  -v means verbose; gives longer syntax with more info
+##  -l means long listing format
+##  -h (with -l) means human-readable (more readable) format)
+##  -r (with rm) means to delete a directory recursively (otherwise deleting directories is not allowed); -i will make you approve deletion of all files in directory to be removed
+
+
+# Using Bash Commands:
 
 # time related 
 
 cal
 
 date
+
 
 # locating things
 
@@ -51,6 +73,7 @@ ls /Users/christopher_distasio/AAA-Practice/bash-script-practice/test-dir-parent
 
 ls -a /Users/christopher_distasio/AAA-Practice/bash-script-practice
 
+
 ls -a -lh /Users/christopher_distasio/AAA-Practice/bash-script-practice
 # same as ls -a -l -h /Users/christopher_distasio/AAA-Practice/bash-script-practice
 
@@ -59,14 +82,44 @@ cd ../..
 
 pwd
 
+
+
+# using absolute path with cd
+
 cd /Users/christopher_distasio/AAA-Practice/bash-script-practice/test-dir-parent/child/
 
 pwd
 
+
 cd .././../././
 # task: guess which directory you'll end up in
 
-# Answer: 
+# See Answer in output: 
+
+pwd
+
+cd test-dir-parent
+cd child
+
+pwd
+
+rm -i -v child-file.txt
+
+touch new-child-txt
+
+ls
+
+cd ..
+
+pwd 
+
+# Use -r to remove directories, empty or not
+rm -r -v child
+
+pwd
+
+cd
+# with no options, go to home directory; the home directory is the default directory
 
 pwd
 
@@ -77,7 +130,6 @@ pwd
 # man ls 
 
 #man shows info about any command following in a separate terminal space than any previous commands before it
-
 
 # exit 
 
