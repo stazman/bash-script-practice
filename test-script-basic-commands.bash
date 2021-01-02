@@ -16,6 +16,9 @@
 
   ## .. means parent directory
 
+# checks if files are identical
+
+  # diff --report-identical-files test-file.txt ../test-dir-parent
 
 ## flags
 ##  -i makes it interactive ... checking if really want to does
