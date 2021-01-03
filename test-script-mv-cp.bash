@@ -58,7 +58,7 @@ ls
 # single file copy:
 cd /Users/christopher_distasio/AAA-Practice/bash-script-practice/test-dir/
 
-#does not do multiple file copying the way mv does
+#does not do multiple files recursively in a directory the way mv does
 
 cp test-file.txt ../test-dir-parent
 
