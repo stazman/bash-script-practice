@@ -129,7 +129,6 @@ pwd
 
 
 
-
 # man ls 
 
 #man shows info about any command following in a separate terminal space than any previous commands before it
@@ -137,3 +136,9 @@ pwd
 # exit 
 
 #exit doesn't execute in a file of commands but does on command line
+
+
+
+
+# Ls (example for test-script-echo-grep.bash practice file)
+# children (example for test-script-echo-grep.bash practice file)
