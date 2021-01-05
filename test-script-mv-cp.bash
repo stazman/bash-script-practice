@@ -17,7 +17,7 @@ mv -v test-dir/test-file.txt ./test-dir-parent
 
 cd test-dir-parent
 
-pwd 
+pwd
 
 ls
 
@@ -26,7 +26,7 @@ mv test-child-file.txt test-file.txt ../test-dir
 
 cd ../test-dir/
 
-pwd 
+pwd
 
 ls
 
@@ -51,7 +51,7 @@ ls
 
 # note that with the tilde you never have to even use the username if you are only working within the current user's directory
 
-# cp 
+# cp
 
 # Two arguments -- path of file to be copied and path of the directory the file is to be copied to
 
@@ -77,3 +77,7 @@ cp -r test-dir test-dir-parent
 cd test-dir-parent
 
 ls
+
+cd ..
+
+mv test-dir-parent test-dir
