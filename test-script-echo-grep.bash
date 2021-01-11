@@ -24,7 +24,7 @@ echo "Hello      World" # preserves spaces
 help echo
 
 
-# Using echo to display messages with escape characters, eg., \t and \n
+# Using echo to display messages with functioning (not literal) escape characters, eg., \t and \n
 
 echo -e "Hello, World\tHere I am"
 
@@ -43,7 +43,7 @@ echo -e "Hello, World\n\n\nHere I am"
 # -v	Select non-matching lines
 # -n	Print line number with output lines
 # -h	Suppress the Unix file name prefix on output
-# -r	Search directories recursivly on Linux
+# -r	Search directories recursively on Linux
 # -R	Just like -r but follow all symlinks
 # -l	Print only names of FILEs with selected lines
 # -c	Print only a count of selected lines per FILE
@@ -52,13 +52,17 @@ echo -e "Hello, World\n\n\nHere I am"
 
 # to show all instances of a substring in a specific file
 # A capitalized Ls is located in test-script-basic-commands.bash
-grep ls test-script-basic-commands.bash
-grep "ls" test-script-basic-commands.bash
+grep the -w test-script-basic-commands.bash
+grep "the" -w test-script-basic-commands.bash
 
-# the capitalized Ls shows up upon execution of the following commands and not the previous ones
+# the capitalized The shows up upon execution of the following commands and not the previous ones
 # because of the -i flag
-grep -i ls test-script-basic-commands.bash
-grep -i "ls" test-script-basic-commands.bash
+
+# Without -w: 
+grep -i the test-script-basic-commands.bash
+
+grep -i -w "the" test-script-basic-commands.bash
+# Note: without -w and with -i, the results will include These because it's capitalized and contains the letters the
 
 # multiple files
 grep ls test-script-basic-commands.bash test-script-mv-cp.bash
@@ -98,10 +102,12 @@ grep -w 'child' test-script-basic-commands.bash
 # shows line numbers
 grep -n 'ls' test-script-basic-commands.bash
 
-# search multiple words in a file
-egrep 'ls|child' test-script-basic-commands.bash
+# search lines with multiple words or phrases in a file ... a pipe separates each word/phrase in a single string; apparently unlimited number of words/phrases can be searched for this way
+egrep 'means|Using Bash Commands' test-script-basic-commands.bash
+egrep 'human-readable|Using Bash Commands|chmod' test-script-basic-commands.bash
 
-# inverse match
+
+# inverse match ... retrieves all lines in which words/phrases are NOT found
 grep -v 'ls' test-script-basic-commands.bash
 egrep -v 'cd|ls' test-script-basic-commands.bash
 
@@ -109,13 +115,16 @@ egrep -v 'cd|ls' test-script-basic-commands.bash
 grep -B 1 -A 1 'listing' test-script-basic-commands.bash
 
 # listing just file names that contain a specific substring
-grep -l "ls" *
-# OR
-grep -Rl "ls" *
+grep -l -h "ls" *
+
+# or for files in a subdirectory/subdirectories
+grep -Rl "ls" * 
 
 pwd 
 
 # to highlight substring in red
 grep --color "ls" test-script-basic-commands.bash
 
+# this will give a 1 at the end of the file name if the file contains the letters ls within it:
+rep -c -Rl "ls" *
 

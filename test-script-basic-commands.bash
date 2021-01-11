@@ -2,11 +2,11 @@
 
 ## general bash info
 
-  # [] around a flag mean that it is optional
+  # The [] around a flag means that it is optional
 
   # ... after an option means that multiple are possible
 
-  # These files are copied from .bash files placed in the Mac directory (root) /usr/local/bin because files need to be located in this exact directory for them to be executable
+  # These files are copied from .bash files placed in Mac directory (root) /usr/local/bin because files need to be located in this exact directory for them to be executable
 
   # Bash files are made executable by using chmod +x ~/usr/local/bin/<file> with the tilde (~) representing the root directory (while at the root directory level in Terminal/other code editor)
 
