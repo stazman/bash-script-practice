@@ -1,6 +1,6 @@
 # Run this after running test-script-echo-grep.bash
 
-# Expansion ... refers to the way the shell expands out the directory, reflecting how special characters work after echo
+# Expansion ... refers to the way the shell expands out the directory, reflecting how special characters work after echo, for example
 
 # works like ls
 # the shell itself has expanded the directory out already, so the special character * is not returned
@@ -12,7 +12,7 @@ cd ..
 
 # Pathname Expansion
 
-# ls (with absolute path, NOT relative path) and *.txt shows all files in the directory with .txt at end
+# ls (with absolute path, NOT relative path) and *.txt shows all files in the directory that have .txt at end
 ls /Users/christopher_distasio/AAA-Practice/bash-script-practice/grep-test-dir/*.txt
 
 # ls (with absolute path, NOT relative path) and *.txt shows all files in the directory with test at beginning
@@ -43,7 +43,41 @@ echo $(( 2**$((2+3)) )) # This works; don't let IDE coloring confuse you
 echo $(( 2**(2+3) ))
 
 
-# Bracket Expansion
 
+# Brace Expansion -- lets you create multiple statements, phrases, etc. using variables passed through curly braces
 
+# form: preamble${expansion}postscript
 
+# Note: Can't have spaces between terms for it to work
+
+#
+
+echo {_1,_2,_3}
+
+echo abc{_1,_2,_3}xyz
+
+echo "A sea surrounding Turkey is the "{Marmara,Aegean,Mediterranean,Black}" Sea".
+# Note: you have to put the end quotation mark directly before the braces; eg,
+echo "A sea surrounding Turkey is the" {Marmara,Aegean,Mediterranean,Black} "Sea".
+
+# Using a range of numbers or letters:
+echo {1..5}
+
+echo {5..1}
+
+# with leading zero ... may or may not work
+echo {01..05}
+
+echo {05..01}
+
+echo {00001..000005}
+
+echo {00005..000001}
+
+echo "This is sentence Number "{1..5}.
+
+echo "This is "{a..z}.
+
+echo "This is "{z..a}.
+
+# Nested brace expansion
