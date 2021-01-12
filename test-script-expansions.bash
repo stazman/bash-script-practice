@@ -13,9 +13,11 @@ cd ..
 # Pathname Expansion
 
 # ls (with absolute path, NOT relative path) and *.txt shows all files in the directory that have .txt at end
+echo "With the wildcard expension * before the given pattern"
 ls /Users/christopher_distasio/AAA-Practice/bash-script-practice/grep-test-dir/*.txt
 
 # ls (with absolute path, NOT relative path) and *.txt shows all files in the directory with test at beginning
+echo "With the wildcard expension * after the given pattern"
 ls /Users/christopher_distasio/AAA-Practice/bash-script-practice/grep-test-dir/test*
 
 
@@ -30,12 +32,13 @@ ls /Users/christopher_distasio/AAA-Practice/bash-script-practice/grep-test-dir/t
 
 echo $((2+3))
 
-echo $((2.0+3)) # doesn't work
+echo $((2.0+3)) # doesn't work ... must be integers
 
 # supports *, /, +, -, %, **
 
 echo Using integer division, seven divided by two is $((7/2)) with a remainder of $((7%2))
 
+# Arithmetic Expansion can also work in a nested way:
 echo $((2**5))
 
 echo $(( 2**$((2+3)) )) # This works; don't let IDE coloring confuse you
@@ -44,7 +47,11 @@ echo $(( 2**(2+3) ))
 
 
 
-# Brace Expansion -- lets you create multiple statements, phrases, etc. using variables passed through curly braces
+# ---- Brace Expansion ----
+
+# Brace Expansion lets you create multiple statements, phrases, etc. using variables passed through curly braces
+
+# NOTE: Spacing is very important for brace expansion. Typically, there can be no space outside of strings with quotation marks for brace expansion, at all, for it to make the desired result.
 
 # form: preamble${expansion}postscript
 
@@ -65,7 +72,7 @@ echo {1..5}
 
 echo {5..1}
 
-# with leading zero ... may or may not work
+# with leading zeroes ... may or may not work
 echo {01..05}
 
 echo {05..01}
@@ -74,10 +81,27 @@ echo {00001..000005}
 
 echo {00005..000001}
 
+echo {a..z}
+
+echo {z..a}
+
 echo "This is sentence Number "{1..5}.
 
 echo "This is "{a..z}.
 
 echo "This is "{z..a}.
 
-# Nested brace expansion
+
+# ---- Nested brace expansion ----
+
+echo pre{A{1,2},B{1,2}}post
+
+
+
+# Expansions are not just useful for echo ...
+
+mkdir monthly-dirs 
+
+cd monthly-dirs
+
+mkdir {2000..2005}-{01..12}
