@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#less command is to read text files of many kinds, such as README.md and txt. It will show the contents of text files in a separate terminal space than any previous commands before it
+#less command is for reading text files of many kinds, such as README.md and txt, in the console. It will show the contents of text files in a separate terminal space than any previous commands before it
 
 # less README.md
 

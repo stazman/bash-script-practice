@@ -1,8 +1,8 @@
-# Command substitutions are like nested queries in SQL. This is a valid comparison, and it seems correct to call them nested commands because they involve a command execution within a command execution.
+# Command substitutions are like nested queries in SQL. It seems correct to call them nested commands because they involve a command execution within a command execution.
 
 # Command substitutions allow output to be used as an argument
 
-# Syntax: $(); not ${}, such as arithmetic expansion
+# Syntax: $(); not ${}, which is done in arithmetic expansion but not with command substitution
 
 mkdir command-substitution-examples
 

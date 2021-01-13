@@ -53,6 +53,8 @@ echo $(( 2**(2+3) ))
 
 # NOTE: Spacing is very important for brace expansion. Typically, there can be no space outside of strings with quotation marks for brace expansion, at all, for it to make the desired result.
 
+# Note: For brace expansion to work, there can be no spaces unless they're escaped ... or the whole expression is not read as one unit
+
 # form: preamble${expansion}postscript
 
 # Note: Can't have spaces between terms for it to work
@@ -97,7 +99,6 @@ echo "This is "{z..a}.
 echo pre{A{1,2},B{1,2}}post
 
 
-
 # Expansions are not just useful for echo ...
 
 mkdir monthly-dirs 
@@ -105,3 +106,10 @@ mkdir monthly-dirs
 cd monthly-dirs
 
 mkdir {2000..2005}-{01..12}
+
+
+# This is called parameter substitution:
+
+echo "${USER}"
+
+
