@@ -22,7 +22,7 @@ echo $(ls)
 
 cd ..
 
-# This substitution allows the user to retrieve the long listing format of the directory
+# This substitution allows the user to retrieve the long listing format of the file
 ls -l $(which command-substitution-examples)
 
 
@@ -30,16 +30,12 @@ ls -l $(which command-substitution-examples)
 
 # ... is different than command substitution:
 
-# Pipelines allow output to be used as input within the same command line
+# Pipelines allow output to be used as input within the same command line and uses pipe sytax instead of command substitution syntax $()
 
 
-# For example, the pipeline below pipes the output of sort to the argument of ls: 
+# For example, the pipeline below pipes the output of sort to the argument of ls:
 
 echo ls | sort
 
 
 echo sort | ls
-
-
-
-
