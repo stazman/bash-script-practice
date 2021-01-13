@@ -1,4 +1,7 @@
-# Note: For brace expansion to work, there can be no spaces unless they're escaped ... or the whole expression is not read as one unit
+# Single and Double Quotation Marks; Advanced Escaped Characters
+
+
+# Escaped Characters
 
 # backslash by itself actually maintains the spacing in the command without it having to be inside a string:
 
@@ -20,5 +23,26 @@ echo Guns\ \ \ \ and \ \ \ \ Roses
 echo Guns\ and\ {Roses,Ammo,Beam}
 
 
-# Single Quotes and Double Quotes
+# When you need to have spaces in the names of things and need them to work as one token:
+
+# Two ways:
+
+# 1. Using escaped space
+
+mkdir spacy-example
+
+cd spacy-example
+
+touch my\ spacy\ file.bash
+
+ls -l
+
+# 2. Using double quotation marks, without escaped spaces
+
+touch "spacy file 2.bash"
+
+
+# ---- Single Quotes vs. Double Quotes ----
+
+# Single quotes around 
 
