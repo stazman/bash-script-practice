@@ -21,20 +21,25 @@
   # diff --report-identical-files test-file.txt ../test-dir-parent
 
 ## flags
+##  -a includes hidden files
 ##  -i makes it interactive ... checking if really want to does
 ##  -v means verbose; gives longer syntax with more info
 ##  -l means long listing format
 ##  -h (with -l) means human-readable (more readable) format)
 ##  -r (with rm) means to delete a directory recursively (otherwise deleting directories is not allowed); -i will make you approve deletion of all files in directory to be removed
 
+# sleep and a number will create a pause for the specified length of time (the default is seconds but there are options for other time measurements: s for seconds, m for minutes, h for hours, d for days, ex. 3s, 3m, 3h, 3d.
+
 
 # Using Bash Commands:
 
-# time related 
+# time related
 
 cal
 
 date
+
+sleep 3
 
 
 # locating things
@@ -97,7 +102,7 @@ pwd
 cd .././../././
 # task: guess which directory you'll end up in
 
-# See Answer in output: 
+# See Answer in output:
 
 pwd
 
@@ -114,7 +119,7 @@ ls
 
 cd ..
 
-pwd 
+pwd
 
 # Use -r to remove directories, empty or not
 rm -r -v child
@@ -129,11 +134,11 @@ pwd
 
 
 
-# man ls 
+# man ls
 
 #man shows info about any command following in a separate terminal space than any previous commands before it
 
-# exit 
+# exit
 
 #exit doesn't execute in a file of commands but does on command line
 
